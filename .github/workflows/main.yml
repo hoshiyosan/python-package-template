@@ -1,4 +1,5 @@
-name: Continuous Integration
+name: Python package
+
 
 on:
   push:
@@ -8,12 +9,14 @@ on:
     tags:
       - 'v*.*.*'
 
+
 env:
   PYTHON_VERSION: 3.8
   PACKAGE_NAME: example
 
+
 jobs:
-  lint_package:
+  ci_lint_package:
     runs-on: ubuntu-latest
     
     steps:
@@ -41,7 +44,7 @@ jobs:
           pipenv run flake8 ${{env.PACKAGE_NAME}}
 
 
-  test_package:
+  ci_test_package:
     runs-on: ubuntu-latest
     
     steps:
@@ -63,3 +66,33 @@ jobs:
       - name: Run project's tests sets
         run: |
           pipenv run python -m pytest tests/ -s
+
+
+  cd_pypi_release:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags')
+    needs:
+      - ci_lint_package
+      - ci_test_package  
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "${{env.PYTHON_VERSION}}"
+
+      - name: Install pipenv
+        run: |
+          python -m pip install --upgrade pipenv wheel
+
+      - name: Install dependencies
+        run: |
+          pipenv install --dev
+    
+      - name: Build python package and wheel
+        run: python setup.py sdist bdist_wheel
+      
+      - name: Publish the distribuable to PyPI
+        run: twine upload -u __token__ -p ${{ secrets.PYPI_TOKEN }} dist/*
