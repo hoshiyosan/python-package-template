@@ -4,7 +4,10 @@
 >
 > **Included**: Linting, tests, releases to pypi.
 
+## Table of contents
+
 - [Python package template](#python-package-template)
+  - [Table of contents](#table-of-contents)
   - [Setup your project](#setup-your-project)
     - [1. Adapt this template](#1-adapt-this-template)
     - [2. CI/CD configuration](#2-cicd-configuration)
