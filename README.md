@@ -9,6 +9,12 @@ Set the following secrets in your GitHub repository.
 PYPI_TOKEN # PyPI token generated for this package.
 ```
 
+## Project requirements
+
+- python
+- pipenv
+- make
+
 ## Usage
 
 ```
