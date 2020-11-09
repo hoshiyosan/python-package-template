@@ -6,24 +6,13 @@
 
 ## Setup your project
 
-Clone this repository, and **don't forget to change remote url**.
+Fork this repository or clone it (and **don't forget to change remote url**).
 
-### 1. Install dependencies
-
-A few tools are required to work using this template.
-
-- python
-- pipenv
-- make
-
-Once these tools available, you will need to install python dev-packages by running :
-```bash
-make install
-```
-
-### 2. Adapt this template
+### 1. Adapt this template
 
 Replace folder `example/` with the one containing your python package.
+
+Change package import in default test (in `tests/` folder).
 
 Edit [setup.py](setup.py) and replace the following rows :
 
@@ -41,21 +30,26 @@ env:
   PACKAGE_NAME: <package name>
 ```
 
-Then push newly created project to your own repo.
-```bash
-git remote rename origin template
-git remote add origin <your repository>
-git push -u origin master
-```
-
-### 3. CI/CD configuration
+### 2. CI/CD configuration
 
 - Reserve package on PyPI and generate project token.
-- Create an empty GitHub repository.
-- Set the `PYPI_TOKEN` secret under repository settings.
+- Set the `PYPI_TOKEN` secret under your repository settings.
 
 
 ## Develop using this template
+
+### Install dependencies
+
+A few tools are required to work using this template.
+
+- python
+- pipenv
+- make
+
+Once these tools available, you will need to install python dev-packages by running :
+```bash
+make install
+```
 
 ### Show project commands
 
