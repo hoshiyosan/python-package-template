@@ -34,4 +34,4 @@ jobs:
 
     - name: Lint project using pylint
       run: |
-        python -m pylint ${{env.PACKAGE_NAME}}
+        pipenv run pylint ${{env.PACKAGE_NAME}}
