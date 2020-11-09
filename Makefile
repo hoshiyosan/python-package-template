@@ -22,9 +22,12 @@ test: ## Run tests sets
 
 patch: ## Deploy a new patch version of this package
 	pipenv run bump2version patch
+	git push && git push --tags
 
 minor: ## Deploy a new minor version of this package
 	pipenv run bump2version minor
+	git push && git push --tags
 
 major: ## Deploy a new patch version of this package
 	pipenv run bump2version major
+	git push && git push --tags
