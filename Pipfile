@@ -9,6 +9,7 @@ name = "pypi"
 bump2version = "*"
 pytest = "*"
 pylint = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.8"

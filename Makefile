@@ -13,6 +13,7 @@ freeze: ## Freeze requirements version for distribution
 
 lint: ## Lint package using pylint
 	pipenv run pylint example/
+	pipenv run flake8 example/
 
 test: ## Run tests sets
 	pipenv run python -m pytest -s tests/
