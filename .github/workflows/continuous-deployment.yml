@@ -6,7 +6,6 @@ on:
       - 'v*.*.*'
   workflow_run:
     workflows: ["Continuous Integration"]
-    branches: [main]
     types: 
       - completed
 
@@ -17,10 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Python {{ PYTHON_VERSION }}
+    - name: Set up Python <python version>
       uses: actions/setup-python@v2
       with:
-        python-version: {{ PYTHON_VERSION }}
+        python-version: <python version>
     
     - name: Install dependencies
       run: |

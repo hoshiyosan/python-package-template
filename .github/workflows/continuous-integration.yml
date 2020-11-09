@@ -8,6 +8,10 @@ on:
     tags:
       - 'v*.*.*'
 
+env:
+  PYTHON_VERSION: 3.8
+  PACKAGE_NAME: example
+
 jobs:
   lint_package:
     runs-on: ubuntu-latest
@@ -15,30 +19,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Python <python version>
+    - name: Setup Python
       uses: actions/setup-python@v2
       with:
-        python-version: <python version>
-    
+        python-version: "{{PYTHON_VERSION}}"
+
+    - name: Install pipenv
+      run: |
+        python -m pip install --upgrade pipenv wheel
+
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements/development
+        pipenv install --dev
 
-  test_package:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Python <python version>
-      uses: actions/setup-python@v2
-      with:
-        python-version: <python version>
-    
-    - name: Install dependencies
+    - name: Lint project using pylint
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements/development
-    
-    
+        python -m pylint {{PACKAGE_NAME}}
