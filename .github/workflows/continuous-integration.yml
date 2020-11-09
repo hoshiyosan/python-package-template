@@ -1,4 +1,4 @@
-name: Lint Package
+name: Continuous Integration
 
 on:
   push:
@@ -9,7 +9,23 @@ on:
       - 'v*.*.*'
 
 jobs:
-  deploy:
+  lint_package:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python <python version>
+      uses: actions/setup-python@v2
+      with:
+        python-version: <python version>
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements/development
+
+  test_package:
     runs-on: ubuntu-latest
     
     steps:

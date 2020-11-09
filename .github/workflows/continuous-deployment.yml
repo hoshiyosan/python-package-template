@@ -1,17 +1,17 @@
-name: PyPI Release
+name: Continuous Deployment
 
 on:
   push:
     tags:
       - 'v*.*.*'
   workflow_run:
-    workflows: ["Lint Package", "Test Package"]
+    workflows: ["Continuous Integration"]
     branches: [main]
     types: 
       - completed
 
 jobs:
-  deploy:
+  pypi_release:
     runs-on: ubuntu-latest
     
     steps:
