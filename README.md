@@ -4,6 +4,14 @@
 >
 > **Included**: Linting, tests, releases to pypi.
 
+- [Python package template](#python-package-template)
+  - [Setup your project](#setup-your-project)
+    - [1. Adapt this template](#1-adapt-this-template)
+    - [2. CI/CD configuration](#2-cicd-configuration)
+  - [Develop using this template](#develop-using-this-template)
+    - [Install dependencies](#install-dependencies)
+    - [Show project commands](#show-project-commands)
+
 ## Setup your project
 
 Fork this repository or clone it (and **don't forget to change remote url**).
