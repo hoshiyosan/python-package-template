@@ -12,10 +12,9 @@ def list_requirements():
 
 
 setuptools.setup(
-    name='<package name>',
-    description='<package description>',
-    version='<package version>',
+    name='example',
+    description='example package structure',
+    version='0.0.1',
     packages=setuptools.find_packages(),
-    install_requires=list_requirements(),
-    ...
+    install_requires=list_requirements()
 )
