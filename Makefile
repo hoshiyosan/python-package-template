@@ -11,6 +11,9 @@ install: ## Install dependencies in a virtualenv
 freeze: ## Freeze requirements version for distribution
 	pipenv lock -r > requirements
 
+test: ## Run tests sets
+	pipenv run pytest -s tests/
+
 ##@ Deployment commands
 
 patch: ## Deploy a new patch version of this package
