@@ -11,11 +11,9 @@ PYPI_TOKEN # PyPI token generated for this package.
 
 ## Usage
 
-```
-make help
-```
+```bash
+$ make help
 
-```
 Usage: make <target>
 
 Development commands
