@@ -11,8 +11,11 @@ install: ## Install dependencies in a virtualenv
 freeze: ## Freeze requirements version for distribution
 	pipenv lock -r > requirements
 
+lint: ## Lint package using pylint
+	pipenv run pylint example/
+
 test: ## Run tests sets
-	pipenv run pytest -s tests/
+	pipenv run python -m pytest -s tests/
 
 ##@ Deployment commands
 
