@@ -21,7 +21,7 @@ test: ## Run tests sets
 ##@ Deployment commands
 
 stage: # Add commonly edited files to avoid manually commiting a minor change...
-	git add .github/ README.md setup.cfg setup.py .gitignore Makefile
+	git add .github/ README.md setup.cfg setup.py .gitignore Makefile Pipfile
 	git commit -m "[DevOps] Prepare new version deployment" > /dev/null \
 		|| echo "Nothing to commit, working tree clean"
 
