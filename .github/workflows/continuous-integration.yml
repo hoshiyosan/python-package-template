@@ -22,7 +22,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
-        python-version: "${{PYTHON_VERSION}}"
+        python-version: "${{env.PYTHON_VERSION}}"
 
     - name: Install pipenv
       run: |
@@ -34,4 +34,4 @@ jobs:
 
     - name: Lint project using pylint
       run: |
-        python -m pylint ${{PACKAGE_NAME}}
+        python -m pylint ${{env.PACKAGE_NAME}}
