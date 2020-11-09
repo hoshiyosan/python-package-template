@@ -1,6 +1,6 @@
-# Python package structure
+# Python package template
 
-> Example structure of python project for automatic deployment on PyPI
+> Example structure of python project for automatic deployment on PyPI.
 
 ## Repository configuration
 
