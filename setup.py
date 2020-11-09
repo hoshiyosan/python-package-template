@@ -14,7 +14,7 @@ def list_requirements():
 setuptools.setup(
     name='example',
     description='example package structure',
-    version='0.0.6',
+    version='0.0.7',
     packages=setuptools.find_packages(),
     install_requires=list_requirements()
 )
