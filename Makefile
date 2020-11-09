@@ -21,8 +21,9 @@ test: ## Run tests sets
 ##@ Deployment commands
 
 stage:
-	git add .github/ README.md setup.cfg setup.py .gitignore
-	git commit -m "[DevOps] Prepare new version deployment"
+	git add .github/ README.md setup.cfg setup.py .gitignore Makefile
+	git commit -m "[DevOps] Prepare new version deployment" > /dev/null \
+		|| echo "Nothing to commit, working tree clean"
 
 patch: stage ## Deploy a new patch version of this package
 	pipenv run bump2version patch
