@@ -2,11 +2,15 @@
 .venv/
 venv/
 
-# ignore python cache files
+# ignore python cached files
 __pycache__/
 *.pyc
 *.egg-info
 .pytest_cache/
+
+# ignore built files
+dist/
+build/
 
 # only for template project
 Pipfile.lock
